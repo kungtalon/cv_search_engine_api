@@ -1,4 +1,4 @@
-python-terrier
+python-terrier==0.7.1
 django
 django-heroku
 djangorestframework
