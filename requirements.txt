@@ -4,3 +4,5 @@ djangorestframework
 python-terrier
 gensim
 nltk
+lightgbm
+gdown
