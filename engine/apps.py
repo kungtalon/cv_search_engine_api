@@ -11,7 +11,7 @@ class ApiConfig(AppConfig):
     FIELDS = ['title', 'abstract', 'subsections', 'authors']
     MODEL_FILE = settings.MODEL_DIR / 'rank_model_fix.pkl'
     if not os.path.exists(MODEL_FILE):
-        gdown.download('https://drive.google.com/u/0/uc?export=download&confirm=DVOq&id=1ji02FO17Rl3m0DgKD3PKX91_i0Y98n-i', MODEL_FILE, quiet=False)
+        gdown.download('https://drive.google.com/u/0/uc?export=download&confirm=DVOq&id=1ji02FO17Rl3m0DgKD3PKX91_i0Y98n-i', str(MODEL_FILE), quiet=False)
     with open(MODEL_FILE, 'rb') as f:
         model = pkl.load(f)
     model.indexes = {}
