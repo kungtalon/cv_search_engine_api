@@ -429,6 +429,7 @@ class PaperRetrieval():
         except KeyError:
             raise EmptyRetrievalError
         
+        del bm25_results
         rank_results = self._merge_meta_data(recall_results)
         if not self.user_args['no_l2r']:
             feature_extractor = FeatureExtractor(rank_results, self.indexes, self.wv, self.user_args)
@@ -438,9 +439,11 @@ class PaperRetrieval():
             preds = self.model.predict(feats)
             sort_idx = np.argsort(preds)[::-1].astype('int32')
             rank_results = rank_results.iloc[sort_idx, :].reset_index(drop=True)
-        
-        return rank_results[['docno', 'conference', 'year', 'workshop', 'title', 'authors',
-       'pdf_link', 'arxiv_link', 'supp_link', 'abstract']].to_dict(orient='records')
+            
+        out = rank_results[['docno', 'conference', 'year', 'workshop', 'title', 'authors',
+            'pdf_link', 'arxiv_link', 'supp_link', 'abstract']].to_dict(orient='records')
+
+        return out
 
 if __name__ == '__main__':
     args = {

@@ -23,7 +23,7 @@ MODEL_DIR = BASE_DIR / 'model'
 SECRET_KEY = 'django-insecure-xho%e%644$v=lrp&m*61jq=w5#h))8*=bmv(s!q-3))+66vr2!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
