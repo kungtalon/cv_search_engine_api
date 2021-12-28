@@ -1,4 +1,4 @@
-python-terrier>=0.7.0
+python-terrier
 django
 django-heroku
 djangorestframework
