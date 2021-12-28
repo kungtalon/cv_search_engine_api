@@ -2,6 +2,7 @@ python-terrier
 django
 django-heroku
 djangorestframework
+gunicorn
 gensim
 nltk
 lightgbm
